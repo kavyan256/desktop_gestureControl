@@ -1,35 +1,54 @@
-# Hand Tracker - Vision Touchscreen Phase 1
+# Hand Tracking Project
 
-Simple hand tracking using OpenCV and MediaPipe to track finger movements.
+This project implements a hand tracking system that allows users to control a cursor on their screen using hand gestures. The system utilizes a webcam for real-time tracking and employs various gesture detection techniques to interpret user actions.
 
-## Setup
+## Project Structure
 
-1. Install the required packages:
-```bash
+```
+hand-tracker-project
+├── src
+│   ├── hand_tracker.py          # Contains the HandTracker class for managing the tracking system
+│   ├── gesture_detector.py       # Contains methods for detecting gestures
+│   ├── cursor_controller.py      # Contains methods for cursor movement based on hand gestures
+│   ├── scroll_controller.py      # Contains methods for handling scrolling actions
+│   ├── click_handler.py          # Contains methods for handling click actions
+│   ├── coordinate_mapper.py      # Contains methods for mapping camera coordinates to screen coordinates
+│   ├── stability_filter.py       # Contains methods for applying stability filters to reduce jitter
+│   └── ui_overlay.py             # Contains methods for drawing the user interface overlay
+├── main.py                       # Entry point for the application
+├── requirements.txt              # Lists the dependencies required for the project
+└── README.md                     # Documentation for the project
+```
+
+## Installation
+
+To install the required dependencies, run:
+
+```
 pip install -r requirements.txt
 ```
 
-2. Run the hand tracker:
-```bash
-python hand_tracker.py
+## Usage
+
+To run the hand tracking application, execute the following command:
+
 ```
+python main.py
+```
+
+Ensure that your webcam is connected and not being used by another application.
 
 ## Features
 
-- Tracks one hand in real-time
-- Detects index finger tip position
-- Applies smoothing to reduce jitter
-- Displays video feed with hand landmarks
-- Shows cursor position coordinates
+- **Gesture Detection**: Recognizes various hand gestures to control cursor movement, scrolling, and clicking.
+- **Cursor Control**: Allows precise cursor movement based on hand position.
+- **Scrolling**: Enables vertical scrolling through hand gestures.
+- **Click Handling**: Supports single and double clicks as well as right-click actions.
 
-## Controls
+## Contributing
 
-- Point with your index finger to see tracking
-- Press 'q' to quit
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any enhancements or bug fixes.
 
-## Next Steps
+## License
 
-This is the foundation for the vision touchscreen system. Future phases will include:
-- Screen coordinate mapping
-- Cursor control
-- Gesture recognition for clicks and scrolls
+This project is licensed under the MIT License. See the LICENSE file for more details.
